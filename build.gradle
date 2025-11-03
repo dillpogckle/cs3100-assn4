@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+application {
+    mainClass = 'Assign4'
+}
+
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Assign4'
+    }
+}
+base {
+    archivesName = 'Assign4'
+}
