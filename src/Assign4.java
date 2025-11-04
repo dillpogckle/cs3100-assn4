@@ -17,10 +17,10 @@ public class Assign4 {
         demoSRTF();
         System.out.println();
 
-//        System.out.println("---------------------------------------------------------");
-//        demoPriority();
-//        System.out.println();
-//
+        System.out.println("---------------------------------------------------------");
+        demoPriority();
+        System.out.println();
+
 //        System.out.println("---------------------------------------------------------");
 //        demoRR();
 //        System.out.println();
@@ -80,25 +80,25 @@ public class Assign4 {
         System.out.println("SRTF CPU scheduling simulation complete");
     }
 
-//    /**
-//     * Priority
-//     */
-//    private static void demoPriority() {
-//        Platform platform = new Platform(CPU_COUNT);
-//        Queue<Process> processes = new LinkedList<>();
-//        processes.add(new Process("P1", 0, 10, 10, 3));
-//        processes.add(new Process("P2", 0, 1, 1, 1));
-//        processes.add(new Process("P3", 0, 2, 2, 4));
-//        processes.add(new Process("P4", 0, 1, 1,5 ));
-//        processes.add(new Process("P5", 0, 5, 5, 2));
-//
-//        System.out.println("Starting Priority CPU scheduling simulation");
-//        Scheduler scheduler = new SchedulerPriority(platform);
-//        platform.simulate(scheduler, processes);
-//        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
-//        System.out.println("Priority CPU scheduling simulation complete");
-//    }
-//
+    /**
+     * Priority
+     */
+    private static void demoPriority() {
+        Platform platform = new Platform(CPU_COUNT);
+        Queue<Process> processes = new LinkedList<>();
+        processes.add(new Process("P1", 0, 10, 10, 3));
+        processes.add(new Process("P2", 0, 1, 1, 1));
+        processes.add(new Process("P3", 0, 2, 2, 4));
+        processes.add(new Process("P4", 0, 1, 1,5 ));
+        processes.add(new Process("P5", 0, 5, 5, 2));
+
+        System.out.println("Starting Priority CPU scheduling simulation");
+        Scheduler scheduler = new SchedulerPriority(platform);
+        platform.simulate(scheduler, processes);
+        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
+        System.out.println("Priority CPU scheduling simulation complete");
+    }
+
 //    /**
 //     * Round Robin
 //     */

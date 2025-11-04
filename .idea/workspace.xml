@@ -7,8 +7,7 @@
     <list default="true" id="c70e6310-c07d-4ed9-851c-599efadddaee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assign4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assign4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerFCFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerFCFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerSJF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSJF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerPriority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerPriority.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SchedulerSRTF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSRTF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +74,7 @@
       <workItem from="1761767083075" duration="206000" />
       <workItem from="1761767296806" duration="10000" />
       <workItem from="1762127583594" duration="3559000" />
-      <workItem from="1762224896961" duration="2152000" />
+      <workItem from="1762224896961" duration="3518000" />
     </task>
     <servers />
   </component>

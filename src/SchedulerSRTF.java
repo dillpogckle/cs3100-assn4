@@ -82,7 +82,7 @@ public class SchedulerSRTF extends SchedulerBase implements Scheduler{
             return next;
         }
 
-        // continue current process
+        // continue
         return cpu;
     }
 }
