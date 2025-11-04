@@ -18,7 +18,7 @@ public class SchedulerFCFS extends SchedulerBase implements Scheduler {
     @Override
     public Process update(Process cpu) {
 
-        // if CPU idle schedule next
+        // if cpu idle schedule next
         if (cpu == null) {
             Process next = ready.poll();
             if (next != null) {
@@ -28,35 +28,41 @@ public class SchedulerFCFS extends SchedulerBase implements Scheduler {
             return next;
         }
 
-        // burst complete
-        if (cpu.isBurstComplete() || cpu.isExecutionComplete()) {
+        // reduce calls
+        boolean burstDone = cpu.isBurstComplete();
+        boolean execDone  = cpu.isExecutionComplete();
 
-            // log events
-            if (cpu.isBurstComplete()) {
+        // burst done and maybe execution done, new process needs to be scheduled
+        if (burstDone || execDone) {
+
+            // log burst done
+            if (burstDone) {
                 logger.log("CPU 0 > Process " + cpu.getName() + " burst complete");
             }
 
-            if (cpu.isExecutionComplete()) {
+            // log execution done
+            if (execDone) {
                 logger.log("CPU 0 > Process " + cpu.getName() + " execution complete");
             }
 
-            // if burst complete but not execution complete, requeue
-            if (!cpu.isExecutionComplete()) {
+            // requeue if still work to do
+            if (!execDone) {
                 ready.add(cpu);
             }
 
+            // switch for removing process
             contextSwitches++;
 
+            // queue next process
             Process next = ready.poll();
             if (next != null) {
                 contextSwitches++;
                 logger.log("CPU 0 > Scheduled " + next.getName());
             }
-
             return next;
         }
 
-        // Continue current process
+        // continue
         return cpu;
     }
 }

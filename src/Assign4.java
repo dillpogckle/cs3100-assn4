@@ -9,14 +9,14 @@ public class Assign4 {
         demoFCFS();
         System.out.println();
 
-//        System.out.println("---------------------------------------------------------");
-//        demoSJF();
-//        System.out.println();
-//
-//        System.out.println("---------------------------------------------------------");
-//        demoSRTF();
-//        System.out.println();
-//
+        System.out.println("---------------------------------------------------------");
+        demoSJF();
+        System.out.println();
+
+        System.out.println("---------------------------------------------------------");
+        demoSRTF();
+        System.out.println();
+
 //        System.out.println("---------------------------------------------------------");
 //        demoPriority();
 //        System.out.println();
@@ -44,42 +44,42 @@ public class Assign4 {
         System.out.println("FCFS CPU scheduling simulation complete");
     }
 
-//    /**
-//     * Shortest Job First
-//     */
-//    private static void demoSJF() {
-//        Platform platform = new Platform(CPU_COUNT);
-//        Queue<Process> processes = new LinkedList<>();
-//        processes.add(new Process("P1", 0, 6, 6));
-//        processes.add(new Process("P2", 0, 8, 8));
-//        processes.add(new Process("P3", 0, 7, 7));
-//        processes.add(new Process("P4", 0, 3, 3));
-//
-//        System.out.println("Starting Shortest Job First CPU scheduling simulation");
-//        Scheduler scheduler = new SchedulerSJF(platform);
-//        platform.simulate(scheduler, processes);
-//        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
-//        System.out.println("SJF CPU scheduling simulation complete");
-//    }
-//
-//    /**
-//     * Shortest Remaining Time First
-//     */
-//    private static void demoSRTF() {
-//        Platform platform = new Platform(CPU_COUNT);
-//        Queue<Process> processes = new LinkedList<>();
-//        processes.add(new Process("P1", 0, 8, 8));
-//        processes.add(new Process("P2", 1, 4, 4));
-//        processes.add(new Process("P3", 2, 9, 9));
-//        processes.add(new Process("P4", 3, 5, 5));
-//
-//        System.out.println("Starting Shortest Remaining Time First CPU scheduling simulation");
-//        Scheduler scheduler = new SchedulerSRTF(platform);
-//        platform.simulate(scheduler, processes);
-//        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
-//        System.out.println("SRTF CPU scheduling simulation complete");
-//    }
-//
+    /**
+     * Shortest Job First
+     */
+    private static void demoSJF() {
+        Platform platform = new Platform(CPU_COUNT);
+        Queue<Process> processes = new LinkedList<>();
+        processes.add(new Process("P1", 0, 6, 6));
+        processes.add(new Process("P2", 0, 8, 8));
+        processes.add(new Process("P3", 0, 7, 7));
+        processes.add(new Process("P4", 0, 3, 3));
+
+        System.out.println("Starting Shortest Job First CPU scheduling simulation");
+        Scheduler scheduler = new SchedulerSJF(platform);
+        platform.simulate(scheduler, processes);
+        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
+        System.out.println("SJF CPU scheduling simulation complete");
+    }
+
+    /**
+     * Shortest Remaining Time First
+     */
+    private static void demoSRTF() {
+        Platform platform = new Platform(CPU_COUNT);
+        Queue<Process> processes = new LinkedList<>();
+        processes.add(new Process("P1", 0, 8, 8));
+        processes.add(new Process("P2", 1, 4, 4));
+        processes.add(new Process("P3", 2, 9, 9));
+        processes.add(new Process("P4", 3, 5, 5));
+
+        System.out.println("Starting Shortest Remaining Time First CPU scheduling simulation");
+        Scheduler scheduler = new SchedulerSRTF(platform);
+        platform.simulate(scheduler, processes);
+        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
+        System.out.println("SRTF CPU scheduling simulation complete");
+    }
+
 //    /**
 //     * Priority
 //     */

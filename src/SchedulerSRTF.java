@@ -1,9 +1,8 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.PriorityQueue;
 
 public class SchedulerSRTF extends SchedulerBase implements Scheduler{
 
-    private Queue<Process> ready = new LinkedList<>();
+    private PriorityQueue<Process> ready = new PriorityQueue<>((a,b) -> Integer.compare(a.getRemainingBurst(), b.getRemainingBurst()));
     private Logger logger;
 
     public SchedulerSRTF(Logger logger) {
@@ -18,17 +17,72 @@ public class SchedulerSRTF extends SchedulerBase implements Scheduler{
     @Override
     public Process update(Process cpu) {
 
+        // if cpu idle schedule next
         if (cpu == null) {
             Process next = ready.poll();
-            if (next != null) contextSwitches++;
+            if (next != null) {
+                contextSwitches++;
+                logger.log("CPU 0 > Scheduled " + next.getName());
+            }
             return next;
         }
 
-        if (cpu.isBurstComplete() || cpu.isExecutionComplete()) {
+        // reduce calls
+        boolean burstDone = cpu.isBurstComplete();
+        boolean execDone  = cpu.isExecutionComplete();
+
+        // burst done and maybe execution done, new process needs to be scheduled
+        if (burstDone || execDone) {
+
+            // log burst done
+            if (burstDone) {
+                logger.log("CPU 0 > Process " + cpu.getName() + " burst complete");
+            }
+
+            // log execution done
+            if (execDone) {
+                logger.log("CPU 0 > Process " + cpu.getName() + " execution complete");
+            }
+
+            // requeue if not done
+            if (!execDone) {
+                ready.add(cpu);
+            }
+
+            // switch for removing process
             contextSwitches++;
-            return ready.poll();
+
+            // run next process
+            Process next = ready.poll();
+            if (next != null) {
+                contextSwitches++;
+                logger.log("CPU 0 > Scheduled " + next.getName());
+            }
+            return next;
         }
 
+        // preemption check
+        Process best = ready.peek();
+        if (best != null && best.getRemainingBurst() < cpu.getRemainingBurst()) {
+
+            // preempt
+            contextSwitches++;
+
+            logger.log("CPU 0 > Preemptively removed: " + cpu.getName());
+
+            // put current process back in ready queue
+            ready.add(cpu);
+
+            // run the better one
+            Process next = ready.poll();
+            if (next != null) {
+                contextSwitches++;
+                logger.log("CPU 0 > Scheduled " + next.getName());
+            }
+            return next;
+        }
+
+        // continue current process
         return cpu;
     }
 }
