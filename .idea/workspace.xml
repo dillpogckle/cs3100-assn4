@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c70e6310-c07d-4ed9-851c-599efadddaee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assign4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assign4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerPriority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerPriority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerRR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerRR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerSJF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSJF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerSRTF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSRTF.java" afterDir="false" />
-    </list>
+    <list default="true" id="c70e6310-c07d-4ed9-851c-599efadddaee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +122,7 @@
       <workItem from="1761767296806" duration="10000" />
       <workItem from="1762127583594" duration="3559000" />
       <workItem from="1762224896961" duration="3518000" />
-      <workItem from="1762716380733" duration="3402000" />
+      <workItem from="1762716380733" duration="3677000" />
     </task>
     <servers />
   </component>
