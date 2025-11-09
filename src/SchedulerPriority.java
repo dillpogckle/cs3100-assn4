@@ -1,8 +1,9 @@
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class SchedulerPriority extends SchedulerBase implements Scheduler{
 
-    private PriorityQueue<Process> ready = new PriorityQueue<>((a,b) -> Integer.compare(a.getPriority(), b.getPriority()));
+    private PriorityQueue<Process> ready = new PriorityQueue<>(Comparator.comparingInt(Process::getPriority));
     private Logger logger;
 
     public SchedulerPriority(Logger logger) {

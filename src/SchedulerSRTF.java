@@ -1,8 +1,9 @@
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class SchedulerSRTF extends SchedulerBase implements Scheduler{
 
-    private PriorityQueue<Process> ready = new PriorityQueue<>((a,b) -> Integer.compare(a.getRemainingBurst(), b.getRemainingBurst()));
+    private PriorityQueue<Process> ready = new PriorityQueue<>(Comparator.comparingInt(Process::getRemainingBurst));
     private Logger logger;
 
     public SchedulerSRTF(Logger logger) {

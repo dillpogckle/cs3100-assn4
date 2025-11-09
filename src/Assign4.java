@@ -21,9 +21,9 @@ public class Assign4 {
         demoPriority();
         System.out.println();
 
-//        System.out.println("---------------------------------------------------------");
-//        demoRR();
-//        System.out.println();
+        System.out.println("---------------------------------------------------------");
+        demoRR();
+        System.out.println();
     }
 
     /**
@@ -99,20 +99,20 @@ public class Assign4 {
         System.out.println("Priority CPU scheduling simulation complete");
     }
 
-//    /**
-//     * Round Robin
-//     */
-//    private static void demoRR() {
-//        Platform platform = new Platform(CPU_COUNT);
-//        Queue<Process> processes = new LinkedList<>();
-//        processes.add(new Process("P1", 0, 24, 24));
-//        processes.add(new Process("P2", 0, 3, 3));
-//        processes.add(new Process("P3", 0, 3, 3));
-//
-//        System.out.println("Starting Round Robin CPU scheduling simulation");
-//        Scheduler scheduler = new SchedulerRR(platform, 4);
-//        platform.simulate(scheduler, processes);
-//        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
-//        System.out.println("RR CPU scheduling simulation complete");
-//    }
+    /**
+     * Round Robin
+     */
+    private static void demoRR() {
+        Platform platform = new Platform(CPU_COUNT);
+        Queue<Process> processes = new LinkedList<>();
+        processes.add(new Process("P1", 0, 24, 24));
+        processes.add(new Process("P2", 0, 3, 3));
+        processes.add(new Process("P3", 0, 3, 3));
+
+        System.out.println("Starting Round Robin CPU scheduling simulation");
+        Scheduler scheduler = new SchedulerRR(platform, 4);
+        platform.simulate(scheduler, processes);
+        System.out.printf("Number of context switches: %d\n", scheduler.getNumberOfContextSwitches());
+        System.out.println("RR CPU scheduling simulation complete");
+    }
 }
